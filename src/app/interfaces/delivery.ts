@@ -1,5 +1,5 @@
-import { Cliente } from "./Cliente";
-import { Motorista } from "./Motorista";
+import { Cliente } from "./cliente";
+import { Motorista } from "./motorista";
 
 export interface Delivery {
     id: string;
