@@ -127,7 +127,6 @@ export class DashboardComponent implements OnInit {
       key: district,
       deliveries: groupKey[district]
     }));
-
   }
-
+  
 }

@@ -20,3 +20,4 @@ import 'promise-polyfill/src/polyfill';  // Run `npm install --save promise-poly
 import 'es6-object-assign/auto';  // Run `npm install --save es6-object-assign`
 import 'array-includes';  // Run `npm install --save array-includes`
 
+import '@angular/localize/init';

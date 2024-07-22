@@ -4,12 +4,9 @@ import { DeliveryService } from '../services/delivery.service';
 
 import { RouterModule } from '@angular/router';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
-import { FilterDeliveryComponent } from '../pages/filter-delivery/filter-delivery.component';
 
 @NgModule({
-  declarations: [
-    //FilterDeliveryComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule,
@@ -18,8 +15,6 @@ import { FilterDeliveryComponent } from '../pages/filter-delivery/filter-deliver
   providers: [
     DeliveryService
   ],
-  exports: [
-    //FilterDeliveryComponent 
-  ],
+  exports: [],
 })
 export class DeliveryModule { }

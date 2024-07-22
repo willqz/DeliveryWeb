@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DeliveryService } from '../../services/delivery.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -47,19 +47,9 @@ export class FilterDeliveryComponent implements OnInit {
   getAllDeliveries() {
     this.deliveryService.getEntregas().subscribe(
       data => {
-        this.allDatadelivery = [];
         this.allDatadelivery = data;
-        
-        if (this.filterForm.controls.formDriver.value?.toString() != '') {
-          this.allDatadelivery = this.allDatadelivery.filter(x => 
-            x.motorista.nome === this.filterForm.controls.formDriver.value?.toString())
-        }
-          
-        if (this.filterForm.controls.formStatus.value?.toString() != '') {
-          this.allDatadelivery = this.allDatadelivery.filter(x => 
-            x.status_entrega === this.filterForm.controls.formStatus.value?.toString())
-        }
-
+        this.filterDriver();
+        this.filterStatus();
         this.collectionSize = this.allDatadelivery.length
       }, error => {
         console.error('Error data:', error);
@@ -67,32 +57,54 @@ export class FilterDeliveryComponent implements OnInit {
     );
   }
 
+  filterDriver() {
+    if (this.filterForm.controls.formDriver.value?.toString() != '') {
+      this.allDatadelivery = this.allDatadelivery.filter(x => 
+        x.motorista.nome === this.filterForm.controls.formDriver.value?.toString())
+    }
+  }
+  
+  filterStatus() {
+    if (this.filterForm.controls.formStatus.value?.toString() != '') {
+      this.allDatadelivery = this.allDatadelivery.filter(x => 
+        x.status_entrega === this.filterForm.controls.formStatus.value?.toString())
+    }
+  }
+
   getAllDrivers() {
     this.deliveryService.getEntregas().subscribe(data => {
-        const names: any[] = [];
-        this.allDatadelivery.forEach((result: any) => {
-          if (!names.includes(result.motorista.nome)) {
-            names.push(result.motorista.nome);
-          }
-        });
-        this.drivers = names;
+        this.getOnlyDrivers();
       }, error => {
         console.error('Error data:', error);
       });
   }
+
+  getOnlyDrivers() {
+    const names: any[] = [];
+    this.allDatadelivery.forEach((result: any) => {
+      if (!names.includes(result.motorista.nome)) {
+        names.push(result.motorista.nome);
+      }
+    });
+    this.drivers = names;
+  }
   
   getAllStatus() {
     this.deliveryService.getEntregas().subscribe(data => {
-        const status: any[] = [];
-        this.allDatadelivery.forEach((result: any) => {
-          if (!status.includes(result.status_entrega)) {
-            status.push(result.status_entrega);
-          }
-        });
-        this.status = status;
+        this.getOnlystatus();
     }, error => {
       console.error('Error data:', error);
     });
+  }
+
+  getOnlystatus() {
+    const status: any[] = [];
+    this.allDatadelivery.forEach((result: any) => {
+      if (!status.includes(result.status_entrega)) {
+        status.push(result.status_entrega);
+      }
+    });
+    this.status = status;
   }
 
   get tableListDelivery(): any[] {

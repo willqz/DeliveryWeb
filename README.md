@@ -4,9 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 `Node Version v20.14.0`
 
 ## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm i`
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 
+## INSTAL NODE VERSION
+RUN `nvm install 20.12.0`
+RUN `nvm use 20.12.0`
 
 ## OR RUN DOCKER:
 Build imagem: `docker build -t logweb .`
