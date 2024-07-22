@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 Run `npm i`
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+Run `ng serve --port 4201` for a dev server. Navigate to `http://localhost:4201/`.
 
 
 ## INSTAL NODE VERSION
