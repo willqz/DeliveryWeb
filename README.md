@@ -14,5 +14,5 @@ RUN `nvm use 20.12.0`
 
 ## OR RUN DOCKER:
 Build imagem: `docker build -t logweb .`
-Run container `docker run -p 4201:4200 logweb`
+Run container `docker run -p 4201:4201 logweb`
 Navegate to `http://localhost:4201`
