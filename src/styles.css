@@ -1,0 +1,22 @@
+.mr-1 {
+  margin: 10px;
+}
+
+.mt-3 {
+  margin-top: 15px;
+}
+
+.mt-5 {
+  margin-top: 30px;
+}
+  
+.hr-margin {
+  margin: 0px !important;
+}
+
+.mt-2{
+  margin-top: 10px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
